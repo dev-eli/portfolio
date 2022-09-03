@@ -1,0 +1,78 @@
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: $direction;
+}
+
+$backgroundColor: gray;
+
+* {
+  box-sizing: border-box;  
+}
+
+#navbar {
+    position: fixed;
+    top: 0px;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    padding: 5px;
+
+    background-color: black;
+    a {
+        color: white;
+        text-decoration: none;
+        padding-left: 20px;;
+    }
+    #home-link {
+        padding-right: 15%;
+    }
+    
+}
+
+body {
+    margin-top: 40px;
+    background-color: $backgroundColor;
+}
+
+/** Repeating **/
+.page {
+    padding: 20px 0px 20px 0px;
+}
+
+.scroll-down {
+    position: relative;
+    bottom: -20vh
+}
+
+/** Home **/
+#home {
+    @include flexCenter(column);
+    background-color: gray;
+    height: 100vh;
+    background-image: url("images/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#profile-pic {
+    height: 100px;
+    border-radius: 50%;
+}
+
+/** About **/
+#about {
+    @include flexCenter(column);
+    width: 100%;
+    #stats {
+        display: grid;
+        grid-template-columns: 50px 50px;
+    }
+}
+
+#skills {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
